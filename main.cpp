@@ -32,9 +32,9 @@ int main() {
             std::cout << "Minimum distance: " << dist << '\n';
         }
 
-        std::cout << "Do you want to continue? (y/n) ";
+        cout << "Do you want to continue? (y/n) ";
         char choice;
-        std::cin >> choice;
+        cin >> choice;
         if (choice != 'y') {
             break;
         }
