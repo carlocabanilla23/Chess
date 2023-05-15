@@ -14,7 +14,7 @@ int main() {
         Point start(sx, sy, 0);
         Point end(ex, ey, 0);
 
-        cout << "Enter obstacles separated by spaces (end with -1 -1): ";
+        cout << "Enter invalid positions separated by spaces (end with -1 -1): ";
         vector<Point> obstacles;
         while (true) {
             int x, y;
