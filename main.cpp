@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     while (true) {
-        cout << "Enter start point separated by spaces: ";
+        cout << "Enter start point separated by space: ";
         int sx, sy, ex, ey;
         cin >> sx >> sy ;
         cout << "End start point separated by spaces: ";
@@ -14,7 +14,18 @@ int main() {
         Point start(sx, sy, 0);
         Point end(ex, ey, 0);
 
-        int dist = bfs(start, end);
+        cout << "Enter obstacles separated by spaces (end with -1 -1): ";
+        vector<Point> obstacles;
+        while (true) {
+            int x, y;
+            cin >> x >> y;
+            if (x == -1 && y == -1) {
+                break;
+            }
+            obstacles.emplace_back(x, y, 0);
+        }
+
+        int dist = bfs(start, end, obstacles);
         if (dist == -1) {
             std::cout << "No path found\n";
         } else {

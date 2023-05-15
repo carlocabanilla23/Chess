@@ -6,9 +6,12 @@ const int BOARD_SIZE = 8;
 const int dx[] = {1, 2, 2, 1, -1, -2, -2, -1};
 const int dy[] = {2, 1, -1, -2, -2, -1, 1, 2};
 
-int bfs(Point start, Point end) {
+int bfs(Point start, Point end, const std::vector<Point>& obstacles) {
     bool visited[BOARD_SIZE][BOARD_SIZE];
-    memset(visited, false, sizeof(visited)); // create a bool table
+    memset(visited, false, sizeof(visited));
+    for (const auto& obstacle : obstacles) {
+        visited[obstacle.x][obstacle.y] = true;
+    }
     std::queue<Point> q;
     q.push(start);
     visited[start.x][start.y] = true;
@@ -29,3 +32,4 @@ int bfs(Point start, Point end) {
     }
     return -1;
 }
+

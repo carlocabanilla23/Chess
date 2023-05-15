@@ -4,6 +4,6 @@
 #include <queue>
 #include "point.h"
 
-int bfs(Point start, Point end);
+int bfs(Point start, Point end,const std::vector<Point>& obstacles);
 
 #endif
